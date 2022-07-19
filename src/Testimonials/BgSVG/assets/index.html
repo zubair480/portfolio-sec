@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .imagesContainer {
+        background-color: blueviolet;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+      }
+      img {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="imagesContainer">
+      <img data-speed="2" class="obj" src="./1.png" alt="" />
+      <img data-speed="3" class="obj" src="./2.png" alt="" />
+      <img data-speed="4" class="obj" src="./3.png" alt="" />
+      <img data-speed="7" class="obj" src="./4.png" alt="" />
+      <img data-speed="3" class="obj" src="./5.png" alt="" />
+      <img data-speed="5" class="obj" src="./6.png" alt="" />
+      <img data-speed="2" class="obj" src="./7.png" alt="" />
+      <img data-speed="4" class="obj" src="./8.png" alt="" />
+      <img data-speed="6" class="obj" src="./9.png" alt="" />
+      <img data-speed="5" class="obj" src="./10.png" alt="" />
+      <img data-speed="5" class="obj" src="./11.png" alt="" />
+      <img data-speed="7" class="obj" src="./12.png" alt="" />
+      <img data-speed="5" class="obj" src="./13.png" alt="" />
+      <!-- <img data-speed="1" class="obj" src="./14.png" alt="" /> -->
+    </div>
+    <script>
+      document.addEventListener("mousemove", parallax);
+      function parallax(e) {
+        this.querySelectorAll(".obj").forEach((obj) => {
+          let speed = obj.getAttribute("data-speed");
+          console.log(speed);
+          let x = (window.innerWidth - e.pageX * speed) / 100;
+          let y = (window.innerHeight - e.pageY * speed) / 100;
+          obj.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }
+    </script>
+  </body>
+</html>

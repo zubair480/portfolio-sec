@@ -1,0 +1,15 @@
+.imagesContainer {
+  /* background-color: blueviolet; */
+  position: absolute;
+}
+.obj {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  /* transition: all 0.5s ease-in-out; */
+}
+@media only screen and (max-device-width: 640px) {
+  .obj {
+    height: 50%;
+  }
+}
